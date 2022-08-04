@@ -1,0 +1,4 @@
+/node_modules
+src/utils/env.sh
+src\utils\env.sh
+/.vscode
