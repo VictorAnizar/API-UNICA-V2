@@ -1,12 +1,10 @@
 
 FROM node:12-buster-slim
-
 RUN apt-get update && apt-get install -y libaio1 wget unzip tree
 
-WORKDIR /opt/oracle
 
 
-RUN tree -I 'node_modules' /
+
 
 WORKDIR /app
 

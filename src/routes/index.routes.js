@@ -21,39 +21,6 @@ async function Router(fastify) {
         }
 
 
-        // const permisos = await Usuario.aggregate([
-        //     {
-        //         '$match': {
-        //             'usrlogin': usrlogin,
-        //         }
-        //     },
-        //     {
-        //         '$lookup': {
-        //             'from': 'usuariopermisos',
-        //             'localField': '_id',
-        //             'foreignField': 'upousrid',
-        //             'as': 'permisosUsuariosInArray'
-        //         }
-        //     }, {
-        //         '$lookup': {
-        //             'from': 'permisos',
-        //             'localField': 'permisosUsuariosInArray.upopmoid',
-        //             'foreignField': '_id',
-        //             'as': 'permisosinArray'
-        //         }
-        //     }, {
-        //         '$addFields': {
-        //             'permisos': '$permisosinArray.pmonombre'
-        //         }
-        //     }, {
-        //         '$project': {
-        //             'permisos': 1
-        //         }
-        //     }
-        // ])
-
-        // console.log(...permisos.map(obj=>obj.permisos));
-
         // console.log(usuarioIncomming);
         if (usuarioIncomming.validarPassword(req.body.password)) {
             const token = fastify.jwt.sign({ curp }, { expiresIn: 86400 });
